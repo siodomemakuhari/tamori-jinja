@@ -187,6 +187,32 @@ body {
 .gallery-item figcaption { font-family: 'Shippori Mincho', serif; font-size: 0.78rem; color: var(--ink-light); padding: 0.8rem 0.2rem; letter-spacing: 0.08em; display: block; }
 @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-main { grid-column: 1; } }
 
+/* TREASURES */
+.treasure { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
+.treasure-photos { display: grid; gap: 1rem; }
+.treasure-photos figure { margin: 0; }
+.treasure-photos img { width: 100%; display: block; border: 1px solid rgba(184,147,58,0.2); }
+.treasure-photos figcaption { font-family: 'Shippori Mincho', serif; font-size: 0.78rem; color: var(--ink-light); padding: 0.6rem 0.2rem 0; letter-spacing: 0.06em; line-height: 1.8; }
+.treasure-badge { display: inline-block; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--red); border: 1px solid var(--red); padding: 0.15rem 0.6rem; margin-bottom: 0.8rem; }
+.treasure-name { font-family: 'Shippori Mincho', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.15em; color: var(--ink); margin-bottom: 1rem; }
+.treasure-text p { font-family: 'Shippori Mincho', serif; font-size: 0.92rem; line-height: 2.1; color: var(--ink-light); margin-bottom: 1.2rem; }
+.inscription { background: var(--white); border: 1px solid rgba(184,147,58,0.25); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; margin-bottom: 1.2rem; }
+.inscription-label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.6rem; }
+.inscription-body { font-family: 'Shippori Mincho', serif; font-size: 1.05rem; color: var(--ink); line-height: 2; letter-spacing: 0.12em; }
+.inscription-note { font-size: 0.72rem; color: var(--ink-light); margin-top: 0.6rem; line-height: 1.7; }
+.treasure-spec { margin-bottom: 1.2rem; }
+.treasure-spec dt { font-family: 'Shippori Mincho', serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--gold); margin-top: 0.9rem; }
+.treasure-spec dd { font-size: 0.85rem; color: var(--ink-light); line-height: 1.9; }
+.tools-title { font-family: 'Shippori Mincho', serif; font-size: 1.15rem; letter-spacing: 0.2em; color: var(--ink); text-align: center; margin: 4rem 0 0.6rem; }
+.tools-lead { font-family: 'Shippori Mincho', serif; font-size: 0.88rem; color: var(--ink-light); text-align: center; margin-bottom: 2rem; }
+.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.tool-card { margin: 0; background: var(--white); border: 1px solid rgba(184,147,58,0.2); box-shadow: var(--shadow); }
+.tool-card .img-wrap { aspect-ratio: 3 / 4; }
+.tool-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tool-card figcaption { padding: 0.9rem 1rem 1.1rem; }
+@media (max-width: 768px) { .treasure { grid-template-columns: 1fr; gap: 1.5rem; } .tools-grid { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+@media (max-width: 480px) { .tools-grid { grid-template-columns: 1fr; } }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
 
@@ -218,6 +244,7 @@ body {
       <a href="#about">由緒</a>
       <a href="#deities">御祭神</a>
       <a href="#gallery">境内</a>
+      <a href="#treasures">祭礼の宝物</a>
       <a href="#events">年間行事</a>
       <a href="#services">ご祈祷・御朱印</a>
       <a href="#access">アクセス</a>
@@ -373,6 +400,104 @@ body {
           <figcaption>
             <span class="gallery-caption-title">宵山　―竹灯り―</span>
             <span class="gallery-caption-desc">宵山の竹灯り</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="treasures" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-en">Festival Treasures</p>
+        <h2 class="section-title">祭礼の宝物</h2>
+        <span class="ornament" aria-hidden="true"></span>
+      </div>
+      <div class="treasure">
+        <div class="treasure-photos">
+          <figure>
+            <img src="tate-hoko.jpg" alt="田守神社 祭礼に用いる盾と鉾" loading="lazy">
+            <figcaption>祭礼の折、社殿前に立て並べられた盾と鉾</figcaption>
+          </figure>
+          <figure>
+            <img src="tate-mei.jpg" alt="田守神社 盾に刻まれた享保十年の銘" loading="lazy">
+            <figcaption>盾の表に刻まれた奉納銘</figcaption>
+          </figure>
+        </div>
+        <div class="treasure-text">
+          <span class="treasure-badge">享保十年（一七二五年）奉納</span>
+          <h3 class="treasure-name">祭礼の盾と鉾</h3>
+          <p>
+            当社の祭礼に用いらるる盾と鉾。
+            金属の板を打ち延べて形を成し、柄には朱塗りに菊紋の飾り金具を施す。
+            盾の表には奉納の年月が鏨にて刻まれ、
+            三百年の歳月を経た今もなお、祭礼の度に社頭に立てられている。
+          </p>
+          <div class="inscription">
+            <p class="inscription-label">銘</p>
+            <p class="inscription-body">
+              享保十乙巳年<br>
+              奉寄進　諸願成就<br>
+              九月吉辰日
+            </p>
+            <p class="inscription-note">※摩耗により一部の文字は判読による推定です。</p>
+          </div>
+          <dl class="treasure-spec">
+            <dt>奉納年</dt>
+            <dd>享保十年（一七二五年）九月　八代将軍徳川吉宗の治世</dd>
+            <dt>意匠</dt>
+            <dd>取付金具には細かな粒文（魚々子）の地に唐草文を彫り表す。柄の一部に「諏訪」の札あり。</dd>
+          </dl>
+          <p>
+            作り手の手業と、これを代々守り伝えてきた氏子の方々の営みにより、
+            江戸中期の奉納品が今も現役で祭礼を彩っております。
+          </p>
+        </div>
+      </div>
+
+      <h3 class="tools-title">祭礼を彩る道具</h3>
+      <p class="tools-lead">秋の例大祭をはじめ、当社の祭礼では次の神輿・祭具が用いられております。</p>
+      <div class="tools-grid">
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="mikoshi.jpg" alt="田守神社 黒漆塗の神輿" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">神輿（黒漆塗）</span>
+            <span class="gallery-caption-desc">黒漆塗に朱の高欄、屋根には巴紋・桐紋の飾り金具。軒下は彩色彫刻で飾られる。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="kakekagami.jpg" alt="田守神社 神輿の懸け鏡" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">懸け鏡</span>
+            <span class="gallery-caption-desc">神輿の軒に吊るす銅製の和鏡。草花などの吉祥文様が鋳出されている。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="mikoshi-kin.jpg" alt="田守神社 金色の神輿" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">神輿（金色）</span>
+            <span class="gallery-caption-desc">金色の金具と朱塗りの神輿。担ぎ棒には紅の紐が巻かれる。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="kodomo-mikoshi.jpg" alt="田守神社 子供神輿" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">子供神輿</span>
+            <span class="gallery-caption-desc">朱塗りに金色の鳳凰を戴く、子どもたちが担ぐ神輿。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="shinkou-hata.jpg" alt="田守神社 御神幸旗と錦の幡" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">御神幸旗・錦の幡</span>
+            <span class="gallery-caption-desc">神紋の三つ巴を染め抜いた「田守神社御神幸」の旗と、錦の幡。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="kenboko.jpg" alt="田守神社 剣鉾" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">剣鉾</span>
+            <span class="gallery-caption-desc">剣先の下に三つ巴紋の錦を垂らし、渡御の列を清め導く。</span>
           </figcaption>
         </figure>
       </div>
