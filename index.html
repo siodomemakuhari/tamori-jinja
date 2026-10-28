@@ -231,6 +231,15 @@ body {
   .deities-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
 }
+.lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(12,8,4,0.94); display: none; align-items: center; justify-content: center; flex-direction: column; padding: 3.5rem 1rem 1.5rem; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 7rem); object-fit: contain; touch-action: pinch-zoom; }
+.lightbox-cap { color: rgba(255,255,255,0.85); font-family: 'Shippori Mincho', serif; font-size: 0.85rem; letter-spacing: 0.06em; margin-top: 0.8rem; text-align: center; line-height: 1.8; max-width: 40rem; }
+.lightbox-close, .lightbox-nav { position: absolute; background: none; border: 0; color: #fff; cursor: pointer; font-size: 2rem; line-height: 1; padding: 0.6rem 0.9rem; opacity: 0.8; }
+.lightbox-close { top: 0.4rem; right: 0.4rem; }
+.lightbox-prev { left: 0.2rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 0.2rem; top: 50%; transform: translateY(-50%); }
+main img[loading] { cursor: zoom-in; }
 </style>
 </head>
 <body>
@@ -293,6 +302,12 @@ body {
           明治四十一年の神社合祀の折、本社吉田社の御祭神を境内社田守神社へ合祀し、
           併せて村内七社の御神霊をも合祀奉斎して、
           以後あらためて「田守神社」と称し奉ることとなった。
+        </p>
+        <p>
+          なお、天正九年（一五八一年）の天正伊賀の乱の折には当地も兵火に罹り、
+          社殿とともに古き記録の多くが失われたと伝えらる。
+          ゆえに今に伝わる由緒は焼失を免れた伝承によるものにして、
+          その創祀は記録に残るより更に古く遡ると考えらる。
         </p>
         <p>
           本来の御祭神に関しては、彦屋主田心命・別雷神・木花咲耶媛命の三説が伝わり、
@@ -502,6 +517,41 @@ body {
             <span class="gallery-caption-desc">剣先の下に三つ巴紋の錦を垂らし、渡御の列を清め導く。</span>
           </figcaption>
         </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="houou.jpg" alt="田守神社 神輿の屋根に戴く鳳凰" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">鳳凰</span>
+            <span class="gallery-caption-desc">黒漆塗の神輿の屋根頂に戴く鳳凰。銅板を打ち出し、羽の一枚一枚に毛彫りを施す。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="chokoku.jpg" alt="田守神社 神輿軒下の彩色彫刻" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">軒下の彩色彫刻</span>
+            <span class="gallery-caption-desc">神輿の軒下を飾る雲・波・唐草の彩色彫刻。組物とともに鮮やかに塗り分けられる。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="warabite.jpg" alt="田守神社 神輿の蕨手と瓔珞" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">蕨手と瓔珞</span>
+            <span class="gallery-caption-desc">屋根の四隅に反り上がる蕨手には牡丹唐草を彫り表し、ガラス玉を連ねた瓔珞を吊るす。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="taiko.jpg" alt="田守神社 三つ巴紋の太鼓" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">太鼓</span>
+            <span class="gallery-caption-desc">革面に金地で神紋の三つ巴を大きく描いた太鼓。祭礼に用いられる。</span>
+          </figcaption>
+        </figure>
+        <figure class="tool-card">
+          <div class="img-wrap"><img src="ohnusa.jpg" alt="田守神社 合祀記念大幣" loading="lazy"></div>
+          <figcaption>
+            <span class="gallery-caption-title">合祀記念大幣</span>
+            <span class="gallery-caption-desc">「合祀記念大幣」の札を掲げる大幣。札の名のとおり、当社の合祀を記念して調えられたもの。和紙の紙垂を幾重にも垂らす。</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -603,8 +653,7 @@ body {
           <span class="paypay-badge" style="margin-top:0.8rem">PayPay 対応</span>
         </div>
       </div>
-    </div>
-        <p class="note center" style="margin-top:1.5rem;">
+      <p class="note center" style="margin-top:1.5rem;">
         その他のお問い合わせは <a href="mailto:sucabiosamachii@gmail.com" style="color:var(--gold);">sucabiosamachii@gmail.com</a> までメールにてお気軽にどうぞ。
       </p>
     </div>
@@ -662,7 +711,37 @@ body {
   </div>
 </footer>
 
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
+  <button class="lightbox-close" aria-label="閉じる">×</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="前の写真">‹</button>
+  <img alt="">
+  <p class="lightbox-cap"></p>
+  <button class="lightbox-nav lightbox-next" aria-label="次の写真">›</button>
+</div>
+
 <script>
+  (() => {
+    const imgs = [...document.querySelectorAll('main img[loading]')];
+    const lb = document.querySelector('.lightbox');
+    const big = lb.querySelector('img'), cap = lb.querySelector('.lightbox-cap');
+    let i = 0;
+    const capOf = el => { const f = el.closest('figure'); const c = f && f.querySelector('figcaption');
+      return c ? c.innerText.replace(/\s*\n\s*/g, '　') : el.alt; };
+    const show = n => { i = (n + imgs.length) % imgs.length; big.src = imgs[i].currentSrc || imgs[i].src; big.alt = imgs[i].alt; cap.textContent = capOf(imgs[i]); };
+    const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+    imgs.forEach((el, n) => el.addEventListener('click', () => { show(n); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+    lb.querySelector('.lightbox-close').addEventListener('click', close);
+    lb.querySelector('.lightbox-prev').addEventListener('click', e => { e.stopPropagation(); show(i - 1); });
+    lb.querySelector('.lightbox-next').addEventListener('click', e => { e.stopPropagation(); show(i + 1); });
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => { if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+    let x0 = null;
+    lb.addEventListener('touchstart', e => { if (e.touches.length === 1) x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1); });
+  })();
+
   document.getElementById('year').textContent = new Date().getFullYear();
 
   const toggle = document.querySelector('.nav-toggle');
