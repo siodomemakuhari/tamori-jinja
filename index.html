@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>田守神社 | 三重県伊賀市</title>
 <meta name="description" content="三重県伊賀市に鎮座する田守神社の公式ホームページです。由緒、御祭神、年間行事、アクセス情報をご案内いたします。">
+<link rel="preload" as="image" href="hero-mikoshi.jpg">
 <link rel="canonical" href="https://siodomemakuhari.github.io/tamori-jinja/">
 <meta name="robots" content="index, follow">
 <!-- Open Graph -->
@@ -12,7 +13,7 @@
 <meta property="og:title" content="田守神社 | 三重県伊賀市">
 <meta property="og:description" content="三重県伊賀市蔵縄手に鎮座する田守神社の公式ホームページ。由緒、御祭神、年間行事、アクセス情報をご案内いたします。">
 <meta property="og:url" content="https://siodomemakuhari.github.io/tamori-jinja/">
-<meta property="og:image" content="https://siodomemakuhari.github.io/tamori-jinja/kadomatsu.jpg">
+<meta property="og:image" content="https://siodomemakuhari.github.io/tamori-jinja/hero-mikoshi.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:site_name" content="田守神社">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,7 +25,7 @@
   "name": "田守神社",
   "alternateName": "たもりじんじゃ",
   "url": "https://siodomemakuhari.github.io/tamori-jinja/",
-  "image": "https://siodomemakuhari.github.io/tamori-jinja/kadomatsu.jpg",
+  "image": "https://siodomemakuhari.github.io/tamori-jinja/hero-mikoshi.jpg",
   "description": "三重県伊賀市蔵縄手に鎮座する田守神社。秋祭は伊賀市指定無形民俗文化財。",
   "address": {
     "@type": "PostalAddress",
@@ -82,16 +83,16 @@ body {
 
 /* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #1a120a; }
-.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(184,147,58,0.18) 0%, transparent 60%), radial-gradient(ellipse at 20% 70%, rgba(139,26,26,0.12) 0%, transparent 55%), linear-gradient(160deg, #1a120a 0%, #2e1f0e 50%, #1a120a 100%); }
-.hero-bg::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(184,147,58,0.04) 0px, transparent 1px, transparent 60px, rgba(184,147,58,0.04) 61px), repeating-linear-gradient(0deg, rgba(184,147,58,0.04) 0px, transparent 1px, transparent 60px, rgba(184,147,58,0.04) 61px); }
-.hero-bg::after { content: '⛩'; position: absolute; bottom: -40px; right: -40px; font-size: 320px; opacity: 0.04; line-height: 1; }
+.hero-bg { position: absolute; inset: 64px 0 0 0; background: linear-gradient(180deg, rgba(20,13,6,0.5) 0%, rgba(20,13,6,0.72) 55%, rgba(20,13,6,0.9) 100%), url('hero-mikoshi.jpg') center top / cover no-repeat, #1a120a; }
+.hero-bg::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, transparent 0%, rgba(10,6,2,0.45) 75%); }
+.hero-photo-note { position: absolute; right: 1rem; bottom: 0.8rem; z-index: 1; font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
 .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem; animation: fadeUp 1.2s ease both; }
 .hero-content::before { content: ''; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--gold)); margin: 0 auto 2rem; }
 .hero-content::after { content: ''; display: block; width: 1px; height: 60px; background: linear-gradient(to bottom, var(--gold), transparent); margin: 2rem auto 0; }
 .hero-sub { font-family: 'Shippori Mincho', serif; font-size: 0.8rem; letter-spacing: 0.3em; color: var(--gold-light); margin-bottom: 1.2rem; }
-.hero-title { font-family: 'Shippori Mincho', serif; font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 700; color: var(--white); letter-spacing: 0.25em; line-height: 1; margin-bottom: 0.4rem; text-shadow: 0 0 60px rgba(184,147,58,0.3); }
-.hero-sub-en { font-size: 0.75rem; letter-spacing: 0.4em; color: rgba(255,255,255,0.4); margin-bottom: 2rem; font-style: italic; }
-.hero-lead { font-family: 'Shippori Mincho', serif; font-size: clamp(0.9rem, 2vw, 1.05rem); color: rgba(255,255,255,0.75); line-height: 2.2; letter-spacing: 0.05em; }
+.hero-title { font-family: 'Shippori Mincho', serif; font-size: clamp(3.5rem, 10vw, 7rem); font-weight: 700; color: var(--white); letter-spacing: 0.25em; line-height: 1; margin-bottom: 0.4rem; text-shadow: 0 2px 24px rgba(0,0,0,0.6), 0 0 60px rgba(184,147,58,0.3); }
+.hero-sub-en { font-size: 0.75rem; letter-spacing: 0.4em; color: rgba(255,255,255,0.6); margin-bottom: 2rem; font-style: italic; }
+.hero-lead { font-family: 'Shippori Mincho', serif; font-size: clamp(0.9rem, 2vw, 1.05rem); color: rgba(255,255,255,0.88); line-height: 2.2; text-shadow: 0 1px 10px rgba(0,0,0,0.7); letter-spacing: 0.05em; }
 .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; text-decoration: none; animation: bounce 2s infinite; }
 .scroll-down span { display: block; width: 20px; height: 20px; border-right: 1.5px solid var(--gold-light); border-bottom: 1.5px solid var(--gold-light); transform: rotate(45deg); opacity: 0.7; }
 
@@ -263,6 +264,7 @@ body {
     <p class="hero-sub-en">Tamori Jinja Shrine</p>
     <p class="hero-lead">千年余の時を伊賀の郷に鎮まり、<br>古山の里と人の暮らしを守りまもる氏神様。</p>
   </div>
+  <p class="hero-photo-note">写真：当社の神輿（黒漆塗）</p>
   <a href="#about" class="scroll-down" aria-label="下へスクロール">
     <span></span>
   </a>
